@@ -5,7 +5,7 @@ from scipy.io import wavfile
 
 # Constants
 SAMPLE_RATE = 44100  # Hz
-DURATION_PER_CHUNK = 0.8  # seconds
+DURATION_PER_CHUNK = 0.003  # seconds
 AMPLITUDE_THRESHOLD = 0.05  # Amplitude threshold to detect tones
 
 BASE_FREQ = 800  # Hz

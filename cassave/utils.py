@@ -14,8 +14,10 @@ def formatDosFilename(name):
     return base + ext  # total 11 characters
     
 def bytesToASCII(bytesIn):
-    string = bytesIn.decode('ascii').strip()
-    stringParts = string.split()
+    # essentially the reverse of above function
+    string = bytesIn.decode('ascii')
+    stringParts = [string[:8], string[8:10]]
     stringNew = stringParts[0] + '.' + stringParts[1]
+    stringNew = stringNew.replace(' ', '')
     return stringNew
     

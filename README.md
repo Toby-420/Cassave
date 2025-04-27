@@ -31,11 +31,8 @@ Features in bold are planned for future versions
 ### Audio Structure
 
 ```
-[1 sec silence] [Preamble] [Magic Number] [Version Byte] [Filename] [Filesize] [File Data] [CRC Checksum] [1 sec silence]
+[Preamble] [Magic Number] [Version Byte] [Filename] [Filesize] [File Data] [CRC Checksum]
 ```
-
-- **Silence:**  
-  1 second of silence padding at start and end to ensure clean recording boundaries.
 
 - **Preamble:**  
   256 bits of alternating `1`s and `0`s (`10101010…`) to allow synchronization.
@@ -50,8 +47,8 @@ Features in bold are planned for future versions
   DOS 8.3 filename format (uppercase, padded with spaces).
 
 - **File Size:**  
-  64-bit unsigned integer representing file size in **bits**.
-  This means the maximum storage capacity with this version of Cassave is 2^64 bits or 2 whole exabytes.
+  64-bit unsigned integer representing file size in **bytes**.
+  This means the maximum storage capacity with this version of Cassave is 2^64 bytes or 16 whole exabytes.
 
 - **File Data:**  
   Raw binary file data.
@@ -90,10 +87,9 @@ The tones are far enough apart in this implementation that there will likely be 
 ## Development Setup
 
 ### Requirements (in requirements.txt)
-- Python 3.10+
+- Python 3.10+ (tested with 3.13)
 - numpy
 - scipy
-- zlib
 
 ### Setup
 ```bash

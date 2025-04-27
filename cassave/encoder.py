@@ -5,11 +5,11 @@ from scipy.io.wavfile import write as write_wav
 
 # Constants
 SAMPLE_RATE = 44100  # Hz
-DURATION_PER_CHUNK = 0.08  # seconds
+DURATION_PER_CHUNK = 0.003  # seconds
 AMPLITUDE = 0.5
 
 BASE_FREQ = 800  # Hz
-FREQ_STEP = 200  # Hz
+FREQ_STEP = 400  # Hz
 NUM_BITS = 8     # bits per chunk
 
 def generate_sine_wave(frequency, duration, sample_rate, amplitude=1.0):
